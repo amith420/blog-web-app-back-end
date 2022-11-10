@@ -1,20 +1,18 @@
 package com.blogwebapp.blogmodel;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
 @Data
-@Document(collection = "blog")
+@Document(collection = "user")
 
-public class Blog {
+public class User {
     @Id
     private String _id;
-    private String title;
-    private String content;
-    private Date date;
-    private Integer like;  
+    private String name;
+    private String email;
+    private String dob;
+    private String password;
 }

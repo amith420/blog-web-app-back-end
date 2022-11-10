@@ -2,7 +2,6 @@ package com.blogwebapp.blogcontroller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,37 +11,38 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.blogwebapp.blogmodel.Blog;
-import com.blogwebapp.blogservice.BlogServ;
+import com.blogwebapp.blogmodel.User;
+import com.blogwebapp.blogservice.UserServ;
 
 @RestController
-@RequestMapping("/blog")
-public class BlogControl {
+@RequestMapping("/user")
+public class UserControl {
     @Autowired
-    private BlogServ blogServ;
+    private UserServ userServ;
 
     @GetMapping("/all")
-    public List<Blog>getAllBlogs(){
-        return blogServ.findAll();   
+    public List<User>getAllUsers(){
+        return userServ.findAll();
     }
 
     @GetMapping("/id/{id}")
-    public Blog getBlogsById(@PathVariable String id){
-        return blogServ.findById(id);   
+    public User getUsersById(@PathVariable String id){
+        return userServ.findById(id);
     }
 
     @PostMapping("/create")
-    public Blog make(@RequestBody Blog blog){
-        return blogServ.create(blog);
+    public User generate(@RequestBody User user){
+        return userServ.create(user);
     }
 
     @PutMapping("/update")
-    public Blog jaba(@RequestBody Blog blog){
-        return blogServ.update(blog);
+    public User edit(@RequestBody User user){
+        return userServ.update(user);
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteById(@PathVariable String id){
-        blogServ.delete(id);
+        userServ.delete(id);
     }
+
 }
