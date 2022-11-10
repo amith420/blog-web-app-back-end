@@ -8,8 +8,6 @@ public interface BlogServ {
 
     Blog create(Blog blog);
 
-    
-
     List<Blog>findAll();
 
     Blog findById(String id);

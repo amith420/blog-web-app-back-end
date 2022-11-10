@@ -29,7 +29,6 @@ public class BlogControl {
     }
 
     
-
     @GetMapping("/id/{id}")
     public Blog getBlogsById(@PathVariable String id){
         return blogServ.findById(id);   
