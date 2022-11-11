@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Document(collection = "blog")
 
-public class Blog {
+public class BlogModel {
     @Id
     private String _id;
     private String title;

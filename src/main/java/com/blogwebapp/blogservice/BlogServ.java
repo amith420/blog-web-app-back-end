@@ -2,17 +2,17 @@ package com.blogwebapp.blogservice;
 
 import java.util.List;
 
-import com.blogwebapp.blogmodel.Blog;
+import com.blogwebapp.blogmodel.BlogModel;
 
 public interface BlogServ {
 
-    Blog create(Blog blog);
+    BlogModel create(BlogModel blog);
 
-    List<Blog>findAll();
+    List<BlogModel>findAll();
 
-    Blog findById(String id);
+    BlogModel findById(String id);
 
     void delete(String id);
 
-    Blog update(Blog blog);
+    BlogModel update(BlogModel blog);
 }

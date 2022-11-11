@@ -6,17 +6,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.blogwebapp.blogmodel.Blog;
-import com.blogwebapp.blogrepository.BlogRepo;
+import com.blogwebapp.blogmodel.BlogModel;
+import com.blogwebapp.blogrepository.BlogRepository;
 
 @Component
 public class BlogServImpl implements BlogServ {
 
     @Autowired
-    private BlogRepo blogRepo;
+    private BlogRepository blogRepo;
 
     @Override
-    public Blog create(Blog blog) {
+    public BlogModel create(BlogModel blog) {
         blog.setDate(new Date());
         blog.setLike(0);
         return blogRepo.save(blog);
@@ -24,7 +24,7 @@ public class BlogServImpl implements BlogServ {
 
    
     @Override
-    public List<Blog> findAll() {
+    public List<BlogModel> findAll() {
         return blogRepo.findAll();
     }
 
@@ -34,12 +34,12 @@ public class BlogServImpl implements BlogServ {
     }
 
     @Override
-    public Blog update(Blog blog) {
+    public BlogModel update(BlogModel blog) {
         return blogRepo.save(blog);
     }
 
     @Override
-    public Blog findById(String id) {
+    public BlogModel findById(String id) {
         return blogRepo.findById(id).get();
     }
     

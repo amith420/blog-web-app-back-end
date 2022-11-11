@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.blogwebapp.blogmodel.Blog;
+import com.blogwebapp.blogmodel.BlogModel;
 import com.blogwebapp.blogservice.BlogServ;
 
 @RestController
 @RequestMapping("/blog")
-public class BlogControl {
+public class BlogController {
     @Autowired
     private BlogServ blogServ;
 
     @GetMapping("/all")
-    public List<Blog>getAllBlogs(){
+    public List<BlogModel>getAllBlogs(){
         return blogServ.findAll();   
     }
 
     @GetMapping("/id/{id}")
-    public Blog getBlogsById(@PathVariable String id){
+    public BlogModel getBlogsById(@PathVariable String id){
         return blogServ.findById(id);   
     }
 
     @PostMapping("/create")
-    public Blog make(@RequestBody Blog blog){
+    public BlogModel make(@RequestBody BlogModel blog){
         return blogServ.create(blog);
     }
 
     @PutMapping("/update")
-    public Blog jaba(@RequestBody Blog blog){
+    public BlogModel jaba(@RequestBody BlogModel blog){
         return blogServ.update(blog);
     }
 
