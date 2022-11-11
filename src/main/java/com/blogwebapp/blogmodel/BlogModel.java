@@ -12,7 +12,7 @@ import lombok.Data;
 
 public class BlogModel {
     @Id
-    private String _id;
+    private String id;
     private String title;
     private String content;
     private Date date;

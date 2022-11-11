@@ -10,9 +10,9 @@ import lombok.Data;
 
 public class UserModel {
     @Id
-    private String _id;
+    private String id;
     private String name;
     private String email;
-    private String dob;
+    private String dateofbirth;
     private String password;
 }
