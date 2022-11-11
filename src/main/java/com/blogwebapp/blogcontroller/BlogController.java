@@ -32,12 +32,12 @@ public class BlogController {
     }
 
     @PostMapping("/create")
-    public BlogModel make(@RequestBody BlogModel blog){
+    public BlogModel create(@RequestBody BlogModel blog){
         return blogServ.create(blog);
     }
 
     @PutMapping("/update")
-    public BlogModel jaba(@RequestBody BlogModel blog){
+    public BlogModel update(@RequestBody BlogModel blog){
         return blogServ.update(blog);
     }
 

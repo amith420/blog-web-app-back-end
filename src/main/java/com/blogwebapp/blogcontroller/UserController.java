@@ -31,12 +31,12 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public UserModel generate(@RequestBody UserModel user){
+    public UserModel create(@RequestBody UserModel user){
         return userServ.create(user);
     }
 
     @PutMapping("/update")
-    public UserModel edit(@RequestBody UserModel user){
+    public UserModel update(@RequestBody UserModel user){
         return userServ.update(user);
     }
 
