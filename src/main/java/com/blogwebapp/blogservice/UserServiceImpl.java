@@ -11,6 +11,7 @@ import com.blogwebapp.blogrepository.UserRepository;
 @Component
 public class UserServiceImpl implements UserService{
 
+
     @Autowired
     private UserRepository userRepo;
 
@@ -37,6 +38,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserModel update(UserModel user) {
         return userRepo.save(user);
+    }
+
+    @Override
+    public Boolean checkEmailAndPassword(String email, String password) {
+        return userRepo.existsByEmailAndPassword( email, password) ;
     }
     
 }

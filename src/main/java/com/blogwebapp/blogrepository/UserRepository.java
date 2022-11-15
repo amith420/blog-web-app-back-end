@@ -5,5 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.blogwebapp.blogmodel.UserModel;
 
 public interface UserRepository extends MongoRepository<UserModel,String> {
+
+    boolean existsByEmailAndPassword(String email, String password);
     
 }

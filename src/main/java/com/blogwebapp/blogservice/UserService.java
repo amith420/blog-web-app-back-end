@@ -5,6 +5,7 @@ import java.util.List;
 import com.blogwebapp.blogmodel.UserModel;
 
 public interface UserService {
+
     UserModel create (UserModel user);
 
     List<UserModel>findAll();
@@ -14,4 +15,7 @@ public interface UserService {
     void delete(String id);
 
     UserModel update(UserModel user);
+
+    Boolean checkEmailAndPassword(String email, String password);
+    
 }

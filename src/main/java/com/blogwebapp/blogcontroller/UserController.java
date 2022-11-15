@@ -3,6 +3,7 @@ package com.blogwebapp.blogcontroller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.blogwebapp.blogmodel.UserModel;
 import com.blogwebapp.blogservice.UserService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/user")
 public class UserController {
     @Autowired
@@ -33,6 +35,11 @@ public class UserController {
     @PostMapping("/create")
     public UserModel create(@RequestBody UserModel user){
         return userServ.create(user);
+    }
+
+    @PostMapping("/login")
+    public Boolean logincheck(@RequestBody UserModel user){
+        return userServ.checkEmailAndPassword(user.getEmail(),user.getPassword());
     }
 
     @PutMapping("/update")

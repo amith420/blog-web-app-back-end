@@ -13,8 +13,8 @@ import lombok.Data;
 public class BlogModel {
     @Id
     private String id;
-    private String title;
-    private String content;
+    private String blogTitle;
+    private String blogContent;
     private Date date;
     private Integer like;  
 }
