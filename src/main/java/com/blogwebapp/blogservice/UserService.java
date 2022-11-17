@@ -6,9 +6,9 @@ import com.blogwebapp.blogmodel.UserModel;
 
 public interface UserService {
 
-    UserModel create (UserModel user);
+    UserModel create(UserModel user);
 
-    List<UserModel>findAll();
+    List<UserModel> findAll();
 
     UserModel findById(String id);
 
@@ -17,5 +17,5 @@ public interface UserService {
     UserModel update(UserModel user);
 
     UserModel checkEmailAndPassword(String email, String password);
-    
+
 }

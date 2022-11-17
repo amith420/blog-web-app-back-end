@@ -23,32 +23,32 @@ public class UserController {
     private UserService userServ;
 
     @GetMapping("/all")
-    public List<UserModel>getAllUsers(){
+    public List<UserModel> getAllUsers() {
         return userServ.findAll();
     }
 
     @GetMapping("/id/{id}")
-    public UserModel getUsersById(@PathVariable String id){
+    public UserModel getUsersById(@PathVariable String id) {
         return userServ.findById(id);
     }
 
     @PostMapping("/create")
-    public UserModel create(@RequestBody UserModel user){
+    public UserModel create(@RequestBody UserModel user) {
         return userServ.create(user);
     }
 
     @PostMapping("/login")
-    public UserModel logincheck(@RequestBody UserModel user){
-        return userServ.checkEmailAndPassword(user.getEmail(),user.getPassword());
+    public UserModel logincheck(@RequestBody UserModel user) {
+        return userServ.checkEmailAndPassword(user.getEmail(), user.getPassword());
     }
 
     @PutMapping("/update")
-    public UserModel update(@RequestBody UserModel user){
+    public UserModel update(@RequestBody UserModel user) {
         return userServ.update(user);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable String id){
+    public void deleteById(@PathVariable String id) {
         userServ.delete(id);
     }
 

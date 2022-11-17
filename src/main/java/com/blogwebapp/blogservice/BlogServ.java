@@ -8,9 +8,9 @@ public interface BlogServ {
 
     BlogModel create(BlogModel blog);
 
-    List<BlogModel>findAll();
+    List<BlogModel> findAll();
 
-    List<BlogModel>getBlogsByUser(String id);
+    List<BlogModel> getBlogsByUser(String id);
 
     BlogModel findById(String id);
 

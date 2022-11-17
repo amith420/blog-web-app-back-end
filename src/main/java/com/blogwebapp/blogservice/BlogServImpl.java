@@ -1,6 +1,5 @@
 package com.blogwebapp.blogservice;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,28 +22,22 @@ public class BlogServImpl implements BlogServ {
 
     @Override
     public BlogModel create(BlogModel blog) {
-        
-        // get document contains previous id
         PreviousId previousIdModel = previousIdRepository.findByType("blog");
-
         Integer previousBlogId = previousIdModel.getPreviousId();
 
-        // increment previous id and set as _id in UserModel
         if (previousBlogId < 9) {
             blog.setId("BN00" + ++previousBlogId);
         } else {
             blog.setId("BN0" + ++previousBlogId);
         }
 
-        // save incremented previousId in PreviousUserModel
         previousIdModel.setPreviousId(previousBlogId);
         previousIdRepository.save(previousIdModel);
 
         blog.setCreatedAt(new Date());
-        // blog.setDate(new Date());
         return blogRepo.save(blog);
     }
-   
+
     @Override
     public List<BlogModel> findAll() {
         return blogRepo.findAll();
@@ -87,6 +80,5 @@ public class BlogServImpl implements BlogServ {
         blog.setLikes(likes);
         return blogRepo.save(blog);
     }
-    
-    
+
 }
