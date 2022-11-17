@@ -6,6 +6,8 @@ import com.blogwebapp.blogmodel.UserModel;
 
 public interface UserRepository extends MongoRepository<UserModel,String> {
 
-    boolean existsByEmailAndPassword(String email, String password);
+    boolean existsByEmail(String email);
+
+    UserModel findByEmailAndPassword(String email, String password);
     
 }

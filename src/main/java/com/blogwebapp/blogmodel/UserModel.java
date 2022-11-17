@@ -1,5 +1,7 @@
 package com.blogwebapp.blogmodel;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +15,8 @@ public class UserModel {
     private String id;
     private String name;
     private String email;
+    private String role;
     private String dateofbirth;
     private String password;
+    private Date createdAt;
 }

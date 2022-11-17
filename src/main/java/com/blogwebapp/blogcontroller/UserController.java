@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public Boolean logincheck(@RequestBody UserModel user){
+    public UserModel logincheck(@RequestBody UserModel user){
         return userServ.checkEmailAndPassword(user.getEmail(),user.getPassword());
     }
 

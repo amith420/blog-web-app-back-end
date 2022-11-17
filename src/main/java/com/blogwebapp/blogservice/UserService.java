@@ -16,6 +16,6 @@ public interface UserService {
 
     UserModel update(UserModel user);
 
-    Boolean checkEmailAndPassword(String email, String password);
+    UserModel checkEmailAndPassword(String email, String password);
     
 }

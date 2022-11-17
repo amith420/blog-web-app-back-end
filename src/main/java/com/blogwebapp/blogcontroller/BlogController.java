@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -31,6 +32,21 @@ public class BlogController {
     @GetMapping("/id/{id}")
     public BlogModel getBlogsById(@PathVariable String id){
         return blogServ.findById(id);   
+    }
+
+    @GetMapping("/user/{id}")
+    public List<BlogModel> getBlogsByUser(@PathVariable String id){
+        return blogServ.getBlogsByUser(id);
+    }
+
+    @PatchMapping("/like/{blogId}/{userId}")
+    public BlogModel getLikes(@PathVariable("blogId") String blogId, @PathVariable("userId") String userId){
+    return blogServ.getLikes(blogId, userId);
+    }
+
+    @PatchMapping("/remove/{blogId}/{userId}")
+    public BlogModel removeLikes(@PathVariable("blogId") String blogId, @PathVariable("userId") String userId){
+    return blogServ.removeLikes(blogId, userId);
     }
 
     @PostMapping("/create")
