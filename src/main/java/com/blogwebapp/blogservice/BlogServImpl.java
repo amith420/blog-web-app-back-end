@@ -50,6 +50,10 @@ public class BlogServImpl implements BlogServ {
 
     @Override
     public BlogModel update(BlogModel blog) {
+        BlogModel blogDb = blogRepo.findById(blog.getId()).get();
+        blogDb.setBlogTitle(blog.getBlogTitle());
+        blogDb.setBlogContent(blog.getBlogContent());
+        blogDb.setLikes(blog.getLikes());
         return blogRepo.save(blog);
     }
 
