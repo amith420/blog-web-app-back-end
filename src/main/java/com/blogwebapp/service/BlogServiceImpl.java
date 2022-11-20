@@ -4,14 +4,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.blogwebapp.model.BlogModel;
 import com.blogwebapp.model.PreviousId;
 import com.blogwebapp.repository.BlogRepository;
 import com.blogwebapp.repository.PreviousIdRepository;
 
-@Component
+@Service
 public class BlogServiceImpl implements BlogService {
 
     @Autowired

@@ -4,14 +4,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.blogwebapp.model.PreviousId;
 import com.blogwebapp.model.UserModel;
 import com.blogwebapp.repository.PreviousIdRepository;
 import com.blogwebapp.repository.UserRepository;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
