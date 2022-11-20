@@ -1,8 +1,8 @@
-package com.blogwebapp.blogservice;
+package com.blogwebapp.service;
 
 import java.util.List;
 
-import com.blogwebapp.blogmodel.UserModel;
+import com.blogwebapp.model.UserModel;
 
 public interface UserService {
 

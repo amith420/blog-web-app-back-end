@@ -1,11 +1,11 @@
-package com.blogwebapp.blogrepository;
+package com.blogwebapp.repository;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.blogwebapp.blogmodel.BlogModel;
+import com.blogwebapp.model.BlogModel;
 
 public interface BlogRepository extends MongoRepository<BlogModel, String> {
 

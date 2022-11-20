@@ -1,4 +1,4 @@
-package com.blogwebapp.blogmodel;
+package com.blogwebapp.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

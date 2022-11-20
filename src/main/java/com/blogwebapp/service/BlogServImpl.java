@@ -1,4 +1,4 @@
-package com.blogwebapp.blogservice;
+package com.blogwebapp.service;
 
 import java.util.Date;
 import java.util.List;
@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.blogwebapp.blogmodel.BlogModel;
-import com.blogwebapp.blogmodel.PreviousId;
-import com.blogwebapp.blogrepository.BlogRepository;
-import com.blogwebapp.blogrepository.PreviousIdRepository;
+import com.blogwebapp.model.BlogModel;
+import com.blogwebapp.model.PreviousId;
+import com.blogwebapp.repository.BlogRepository;
+import com.blogwebapp.repository.PreviousIdRepository;
 
 @Component
 public class BlogServImpl implements BlogServ {
