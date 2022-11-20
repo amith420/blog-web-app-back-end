@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blogwebapp.model.BlogModel;
-import com.blogwebapp.service.BlogServ;
+import com.blogwebapp.service.BlogService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/blog")
 public class BlogController {
     @Autowired
-    private BlogServ blogServ;
+    private BlogService blogServ;
 
     @GetMapping("/all")
     public List<BlogModel> getAllBlogs() {

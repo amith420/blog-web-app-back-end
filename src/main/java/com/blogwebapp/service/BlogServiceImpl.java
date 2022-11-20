@@ -12,7 +12,7 @@ import com.blogwebapp.repository.BlogRepository;
 import com.blogwebapp.repository.PreviousIdRepository;
 
 @Component
-public class BlogServImpl implements BlogServ {
+public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private PreviousIdRepository previousIdRepository;

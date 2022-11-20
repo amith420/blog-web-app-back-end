@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.blogwebapp.model.BlogModel;
 
-public interface BlogServ {
+public interface BlogService {
 
     BlogModel create(BlogModel blog);
 
